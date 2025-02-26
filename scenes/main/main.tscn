@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://btgd4u35f5so5"]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_u52ay"]
+[ext_resource type="PackedScene" uid="uid://ur0ht5os2red" path="res://scenes/player/player.tscn" id="1_ukmj5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_u52ay")
+player_scene = ExtResource("1_ukmj5")
+
+[node name="Spawn Locations" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="Spawn Locations" groups=["PlayerSpawnPoint"]]
+position = Vector2(798, 464)
+
+[node name="1" type="Node2D" parent="Spawn Locations" groups=["PlayerSpawnPoint"]]
+position = Vector2(1108, 459)
+
+[node name="2" type="Node2D" parent="Spawn Locations" groups=["PlayerSpawnPoint"]]
+position = Vector2(808, 721)
+
+[node name="3" type="Node2D" parent="Spawn Locations" groups=["PlayerSpawnPoint"]]
+position = Vector2(1120, 713)

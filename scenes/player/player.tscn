@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ur0ht5os2red"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_edu77"]
+
+[sub_resource type="Curve" id="Curve_jb33g"]
+_data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_fiuq1"]
+curve = SubResource("Curve_jb33g")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r312e"]
+size = Vector2(52, 50)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sbnlb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+motion_mode = 1
+script = ExtResource("1_edu77")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.202958, 49.3594)
+texture = SubResource("CurveTexture_fiuq1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r312e")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_sbnlb")
