@@ -140,6 +140,15 @@ offset_right = -84.0
 offset_bottom = 45.0
 color = Color(0, 0, 0, 1)
 
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 1094.0
+offset_top = 555.0
+offset_right = 1244.0
+offset_bottom = 586.0
+placeholder_text = "IP address"
+max_length = 15
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Cyan" to="." method="_on_cyan_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Orange" to="." method="_on_orange_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Purple" to="." method="_on_purple_pressed"]
