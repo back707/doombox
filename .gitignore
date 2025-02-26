@@ -8,3 +8,7 @@ export_credentials.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
+.godot/editor/start.tscn-editstate-2108cf5763fed14f2bca423eeb69d126.cfg
+.godot/editor/script_editor_cache.cfg
+.godot/editor/project_metadata.cfg
+.godot/editor/editor_layout.cfg
