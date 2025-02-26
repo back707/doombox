@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://brd2ux4grv5qi"]
 
-[ext_resource type="Script" path="res://scenes/start/start.gd" id="1_3qklk"]
+[ext_resource type="Script" path="res://scenes/start/multiplayer_menu.gd" id="1_3qklk"]
 [ext_resource type="ButtonGroup" uid="uid://dhqvjveclwp5c" path="res://other/character_choice_buttons.tres" id="2_7c77o"]
 
 [sub_resource type="Gradient" id="Gradient_13ali"]
@@ -39,7 +39,7 @@ gradient = SubResource("Gradient_q81o6")
 width = 50
 height = 50
 
-[node name="Start" type="Control"]
+[node name="MultiplayerMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

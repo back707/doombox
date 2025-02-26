@@ -10,7 +10,7 @@ extends Control
 #endregion
 
 
-@export var address : String = "127.0.0.1"
+@export var address : String = ""
 @export var port : int = 8910
 
 var peer : ENetMultiplayerPeer
@@ -46,10 +46,10 @@ func server_disconnected() -> void:
 	print("Disconnected from server")
 	
 @rpc("any_peer")
-func _send_player_information(name : String, id : int) -> void:
+func _send_player_information(color : String, id : int) -> void:
 	if !GameManager.players.has(id):
 		GameManager.players[id] = {
-			"color" : name,
+			"color" : color,
 			"id" : id,
 			"boxes" : 0
 		}
@@ -76,6 +76,7 @@ func _on_host_pressed() -> void:
 	_send_player_information(player_name, multiplayer.get_unique_id())
 
 func _on_join_pressed() -> void:
+	address = $LineEdit.text
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(address, port)
 	peer.get_host().compress(ENetConnection.COMPRESS_RANGE_CODER)
