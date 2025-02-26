@@ -1,0 +1,4 @@
+res://scenes/start/start.tscn
+res://scenes/main/main.tscn
+res://scenes/start/start.gd
+res://scenes/player/player.gd
