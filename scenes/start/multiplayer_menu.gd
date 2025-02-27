@@ -14,7 +14,7 @@ extends Control
 
 var peer : ENetMultiplayerPeer
 
-var player_name : String = "BLACK"
+var player_frame : int = 0
 
 func _ready() -> void:
 	multiplayer.peer_connected.connect(peer_connected)
@@ -39,7 +39,7 @@ func peer_disconnected(id : int) -> void:
 func connected_to_server() -> void:
 	print("Connected to Server")
 	$VBoxContainer/Join.disabled = true
-	_send_player_information.rpc_id(1, player_name, multiplayer.get_unique_id())
+	_send_player_information.rpc_id(1, player_frame, multiplayer.get_unique_id())
 
 func connection_failed() -> void:
 	print("Failed to connect")
@@ -48,17 +48,17 @@ func server_disconnected() -> void:
 	print("Disconnected from server")
 	
 @rpc("any_peer")
-func _send_player_information(color : String, id : int) -> void:
+func _send_player_information(color_frame : int, id : int) -> void:
 	if !GameManager.players.has(id):
 		GameManager.players[id] = {
-			"color" : color,
+			"frame" : color_frame,
 			"id" : id,
 			"weapon" : Weapon,
 			"boxes" : 0
 		}
 	if multiplayer.is_server():
 		for i in GameManager.players:
-			_send_player_information.rpc(GameManager.players[i].color, i)
+			_send_player_information.rpc(GameManager.players[i].frame, i)
 
 @rpc("any_peer","call_local")
 func _start_game() -> void:
@@ -80,7 +80,7 @@ func _host_game() -> void:
 	
 func _on_host_pressed() -> void:
 	_host_game()
-	_send_player_information(player_name, multiplayer.get_unique_id())
+	_send_player_information(player_frame, multiplayer.get_unique_id())
 
 func _on_join_pressed() -> void:
 	address = $LineEdit.text
@@ -94,20 +94,19 @@ func _on_start_pressed() -> void:
 
 
 #region Color Select
-
 func _on_cyan_pressed() -> void:
-	player_name = "CYAN"
+	player_frame = 1
 	color_rect.position = cyan.global_position
 
 func _on_orange_pressed() -> void:
-	player_name = "ORANGE"
+	player_frame = 2
 	color_rect.position = orange.global_position
 
 func _on_purple_pressed() -> void:
-	player_name = "PURPLE"
+	player_frame = 3
 	color_rect.position = purple.global_position
 
 func _on_mint_pressed() -> void:
-	player_name = "MINT"
+	player_frame = 4
 	color_rect.position = mint.global_position
 #endregion

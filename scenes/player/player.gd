@@ -1,5 +1,7 @@
 extends CharacterBody2D
+class_name Player
 
+@export var health : int = 100
 @export var speed : int = 350
 var direction : Vector2 = Vector2.ZERO
 
@@ -11,14 +13,7 @@ func _ready() -> void:
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
 	
 	##set colors of each player locally
-	if GameManager.players[str(name).to_int()].color == "CYAN":
-		modulate = Color.CYAN
-	if GameManager.players[str(name).to_int()].color == "ORANGE":
-		modulate = Color.ORANGE
-	if GameManager.players[str(name).to_int()].color == "PURPLE":
-		modulate = Color.PURPLE
-	if GameManager.players[str(name).to_int()].color == "MINT":
-		modulate = Color.MEDIUM_SPRING_GREEN
+	$Sprite2D.frame = GameManager.players[str(name).to_int()].frame
 		
 	##Set all players' weapon to the selected starting weapon locally
 	for i in GameManager.players:
@@ -47,7 +42,15 @@ func _process(_delta: float) -> void:
 		
 		if position.y < 0:
 			position.y = 0
-		
+		 
 		##ATTACKING
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			$WeaponNode._fire()
+		
+		##HEALTH
+		if health <= 0:
+			queue_free()
+		$Label.text = "HP: " + str(health)
+		
+func _damage(damage : int) -> void:
+	health -= damage

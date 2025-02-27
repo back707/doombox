@@ -23,13 +23,24 @@ func _process(delta: float) -> void:
 		_swing(delta)
 	if is_cooling: #cooldown!
 		_cooldown(delta)
-
+	
+func _on_weapon_hit(body : Node2D) -> void:
+	if body is Enemy:
+		body._damage(weapon.damage)
 
 func _change_weapon(new_weapon : Weapon) -> void: #this can be called to swap to a new weapon
 	weapon = new_weapon
-	var instance : Node = weapon.scene.instantiate()
-	add_child(instance)
 	
+	##Change Weapon sprite
+	var sprite : Sprite2D = weapon.sprite.instantiate()
+	add_child(sprite)
+	
+	##change weapon collision if melee
+	if weapon is MeleeWeapon:
+		var colide : Area2D = weapon.collision_scene.instantiate()
+		add_child(colide)
+		colide.body_entered.connect(_on_weapon_hit)
+		
 func _fire() -> void: # call this when firing off current weapon regardless of type
 	if weapon is MeleeWeapon:
 		if !is_swinging && !is_cooling:

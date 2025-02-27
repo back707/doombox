@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpswt0ejjkk0q"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_0eeqh"]
+[ext_resource type="Resource" uid="uid://bj1ni0k8vpef1" path="res://common/resources/enemies/basic.tres" id="2_1a6i3"]
+[ext_resource type="Texture2D" uid="uid://bl8dqln21pgw5" path="res://sprites/redbox.png" id="3_qbaab"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p6dbk"]
+radius = 25.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpjcj"]
+size = Vector2(14, 44)
+
+[sub_resource type="Animation" id="Animation_tnihb"]
+resource_name = "attacking"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackZone/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 0), Vector2(30, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uglyh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackZone/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdp2m"]
+_data = {
+"RESET": SubResource("Animation_uglyh"),
+"attacking": SubResource("Animation_tnihb")
+}
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_kyndm"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_0eeqh")
+enemy = ExtResource("2_1a6i3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_qbaab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p6dbk")
+
+[node name="AttackZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_fpjcj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qdp2m")
+}
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_kyndm")
+
+[connection signal="body_entered" from="AttackZone" to="." method="_on_attack_zone_body_entered"]

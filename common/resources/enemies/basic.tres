@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=3 format=3 uid="uid://bj1ni0k8vpef1"]
+
+[ext_resource type="Script" path="res://common/classes/enemy_type.gd" id="1_phm25"]
+[ext_resource type="Texture2D" uid="uid://bl8dqln21pgw5" path="res://sprites/redbox.png" id="2_pt76j"]
+
+[resource]
+script = ExtResource("1_phm25")
+name = "basic"
+health = 25
+damage = 5
+speed = 50
+texture = ExtResource("2_pt76j")
