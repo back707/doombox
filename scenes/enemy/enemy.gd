@@ -18,8 +18,9 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	
 	##Health
-	if health <= 0:
-		queue_free()
+	if multiplayer.get_unique_id() == 1:
+		if health <= 0:
+			_kill_enemy.rpc()
 	
 func get_nearest_player() -> Player:
 	var players : Array = get_tree().get_nodes_in_group("Player")
@@ -39,3 +40,7 @@ func _damage(damage : int) -> void:
 func _on_attack_zone_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body._damage(enemy.damage)
+
+@rpc("any_peer","call_local")
+func _kill_enemy() -> void:
+	queue_free()

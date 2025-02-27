@@ -7,7 +7,6 @@ var direction : Vector2 = Vector2.ZERO
 
 @export var starting_weapon : Weapon
 
-
 func _ready() -> void:
 	##set authority to name of player node(name should be that player's id)
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
@@ -18,7 +17,8 @@ func _ready() -> void:
 	##Set all players' weapon to the selected starting weapon locally
 	for i in GameManager.players:
 		GameManager.players[i].weapon = starting_weapon
-		$WeaponNode._change_weapon(starting_weapon)
+		
+	$WeaponNode._change_weapon(GameManager.players[multiplayer.get_unique_id()].weapon)
 
 	
 func _process(_delta: float) -> void:
@@ -49,7 +49,7 @@ func _process(_delta: float) -> void:
 		
 		##HEALTH
 		if health <= 0:
-			queue_free()
+			get_tree().quit()
 		$Label.text = "HP: " + str(health)
 		
 func _damage(damage : int) -> void:
