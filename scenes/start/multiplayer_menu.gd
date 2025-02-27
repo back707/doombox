@@ -9,7 +9,6 @@ extends Control
 @onready var mint: TextureButton = $VBoxContainer/HBoxContainer/Mint
 #endregion
 
-
 @export var address : String = ""
 @export var port : int = 8910
 
@@ -23,6 +22,8 @@ func _ready() -> void:
 	multiplayer.connected_to_server.connect(connected_to_server)
 	multiplayer.connection_failed.connect(connection_failed)
 	multiplayer.server_disconnected.connect(server_disconnected)
+	if "--server" in OS.get_cmdline_args():
+		_host_game()
 	
 func peer_connected(id : int) -> void:
 	print("Player connected:" + str(id))
@@ -37,6 +38,7 @@ func peer_disconnected(id : int) -> void:
 
 func connected_to_server() -> void:
 	print("Connected to Server")
+	$VBoxContainer/Join.disabled = true
 	_send_player_information.rpc_id(1, player_name, multiplayer.get_unique_id())
 
 func connection_failed() -> void:
@@ -51,6 +53,7 @@ func _send_player_information(color : String, id : int) -> void:
 		GameManager.players[id] = {
 			"color" : color,
 			"id" : id,
+			"weapon" : Weapon,
 			"boxes" : 0
 		}
 	if multiplayer.is_server():
@@ -61,9 +64,10 @@ func _send_player_information(color : String, id : int) -> void:
 func _start_game() -> void:
 	var scene : Node = load("res://scenes/main/main.tscn").instantiate()
 	get_tree().root.add_child(scene)
+	print("Game started with " + str(GameManager.players.size()) + " players")
 	self.hide()
-	
-func _on_host_pressed() -> void:
+
+func _host_game() -> void:
 	peer = ENetMultiplayerPeer.new()
 	var error : int = peer.create_server(port)
 	if error != OK:
@@ -73,6 +77,9 @@ func _on_host_pressed() -> void:
 	
 	multiplayer.set_multiplayer_peer(peer)
 	print("waiting for players")
+	
+func _on_host_pressed() -> void:
+	_host_game()
 	_send_player_information(player_name, multiplayer.get_unique_id())
 
 func _on_join_pressed() -> void:

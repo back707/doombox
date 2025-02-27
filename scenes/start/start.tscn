@@ -142,10 +142,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 1094.0
-offset_top = 555.0
-offset_right = 1244.0
-offset_bottom = 586.0
+offset_left = 653.0
+offset_top = 519.0
+offset_right = 803.0
+offset_bottom = 550.0
 placeholder_text = "IP address"
 max_length = 15
 

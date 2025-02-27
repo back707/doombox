@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ur0ht5os2red"]
+[gd_scene load_steps=8 format=3 uid="uid://ur0ht5os2red"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_edu77"]
+[ext_resource type="Resource" uid="uid://dbgxvnfkjo27b" path="res://common/weapons/stick.tres" id="2_qen74"]
+[ext_resource type="PackedScene" uid="uid://bukhpqfft0vmu" path="res://scenes/weapon_node/weapon_node.tscn" id="3_nyfqx"]
 
 [sub_resource type="Curve" id="Curve_jb33g"]
 _data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -16,10 +18,21 @@ size = Vector2(52, 50)
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("WeaponNode:position")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("WeaponNode:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_edu77")
+starting_weapon = ExtResource("2_qen74")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.202958, 49.3594)
@@ -27,6 +40,8 @@ texture = SubResource("CurveTexture_fiuq1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_r312e")
+
+[node name="WeaponNode" parent="." instance=ExtResource("3_nyfqx")]
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_sbnlb")

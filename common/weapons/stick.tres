@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=3 format=3 uid="uid://dbgxvnfkjo27b"]
+
+[ext_resource type="Script" path="res://common/weapon_classes/melee_weapon.gd" id="1_newjl"]
+[ext_resource type="PackedScene" uid="uid://bd2pgyltai0nk" path="res://scenes/stick_scene.tscn" id="2_wjukd"]
+
+[resource]
+script = ExtResource("1_newjl")
+swing_cooldown = 0.1
+swing_attack_speed = 3.0
+swing_distance = 50.0
+swing_arc = 0.0
+name = "stick"
+damage = 0
+scene = ExtResource("2_wjukd")
