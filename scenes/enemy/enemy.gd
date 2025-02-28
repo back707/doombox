@@ -10,6 +10,7 @@ func _ready() -> void:
 	health = enemy.health
 	$Sprite2D.texture = enemy.texture
 	$AnimationPlayer.play("attacking")
+	$MultiplayerSynchronizer.set_multiplayer_authority(1)
 	
 func _process(delta: float) -> void:
 	##chase the nearest player
