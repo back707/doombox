@@ -46,6 +46,8 @@ _data = {
 script = ExtResource("1_u52ay")
 player_scene = ExtResource("1_ukmj5")
 enemy_scene = ExtResource("3_81jyt")
+wave_amount_interval_period = 4
+spawn_timer = 4.0
 
 [node name="SpawnLocations" type="Node2D" parent="."]
 
@@ -60,9 +62,6 @@ position = Vector2(324, 594)
 
 [node name="3" type="Node2D" parent="SpawnLocations" groups=["PlayerSpawnPoint"]]
 position = Vector2(636, 586)
-
-[node name="Enemy" parent="." instance=ExtResource("3_81jyt")]
-position = Vector2(483, 82)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 position = Vector2(370, -47)

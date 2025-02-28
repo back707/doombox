@@ -7,8 +7,8 @@
 [resource]
 script = ExtResource("3_ba666")
 swing_cooldown = 0.1
-swing_attack_speed = 3.0
-swing_distance = 75.0
+swing_attack_speed = 4.0
+swing_distance = 85.0
 swing_arc = 0.0
 collision_scene = ExtResource("2_8yimn")
 name = "stick"

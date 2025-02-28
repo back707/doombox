@@ -1,8 +1,9 @@
 extends Node2D
-
 @export var player_scene : PackedScene
 @export var enemy_scene : PackedScene
-
+@export var wave_amount : int = 1
+@export var wave_amount_interval_period : int = 3
+var wave_amount_interval : int
 @export var spawn_timer : float = 5
 var spawn_timer_length : float
 
@@ -18,7 +19,7 @@ func _ready() -> void:
 				current_player.global_position = spawn.global_position
 		index += 1
 		
-	##spawning
+	##spawner movement
 	spawn_timer_length = spawn_timer
 	$EnemySpawner/AnimationPlayer.play("circling")
 	
@@ -29,8 +30,12 @@ func _spawn_timer(delta) -> void:
 	spawn_timer -= delta
 	if spawn_timer <= 0:
 		spawn_timer = spawn_timer_length
-		_spawn_wave(1)
-		
+		_spawn_wave(wave_amount)
+		wave_amount_interval += 1
+		if wave_amount_interval >= wave_amount_interval_period:
+			wave_amount += 1
+			wave_amount_interval = 0
+			
 func _spawn_wave(amount) -> void:
 	if multiplayer.get_unique_id() == 1:
 		print("spawned a wave of " + str(amount))
