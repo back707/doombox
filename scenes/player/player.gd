@@ -14,12 +14,8 @@ func _ready() -> void:
 	##set colors of each player locally
 	$Sprite2D.frame = GameManager.players[str(name).to_int()].frame
 		
-	##Set all players' weapon to the selected starting weapon locally
-	for i in GameManager.players:
-		GameManager.players[i].weapon = starting_weapon
-		
-	$WeaponNode._change_weapon(GameManager.players[multiplayer.get_unique_id()].weapon)
-
+	##set the starting weapon
+	$WeaponNode._change_weapon(starting_weapon)
 	
 func _process(_delta: float) -> void:
 	##IF THE USER HAS AUTHORITY OVER THE PLAYER, CONTROL IT
@@ -49,8 +45,14 @@ func _process(_delta: float) -> void:
 		
 		##HEALTH
 		if health <= 0:
-			get_tree().quit()
-		$Label.text = "HP: " + str(health)
+			get_parent()._check_restart(name)
+			_player_died.rpc()
+			
+		$Label.text = "HP: " + str(health) #Health text label
 		
 func _damage(damage : int) -> void:
 	health -= damage
+
+@rpc("any_peer", "call_local")
+func _player_died() -> void:
+	queue_free()

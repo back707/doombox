@@ -17,9 +17,10 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	##chase the nearest player
-	look_at(get_nearest_player().position)
-	velocity = Vector2.from_angle(rotation) * enemy.speed
-	move_and_slide()
+	if get_nearest_player():
+		look_at(get_nearest_player().position)
+		velocity = Vector2.from_angle(rotation) * enemy.speed
+		move_and_slide()
 	
 	##Health
 	if multiplayer.get_unique_id() == 1:
@@ -29,14 +30,16 @@ func _process(delta: float) -> void:
 func get_nearest_player() -> Player:
 	var players : Array = get_tree().get_nodes_in_group("Player")
 	var curr_player : Node2D
-	var shortest_distance : float = global_position.distance_to(players[0].global_position)
-	curr_player = players[0]
-	for i in players:
-		var curr_dist : float = global_position.distance_to(i.global_position)
-		if curr_dist < shortest_distance:
-			curr_player = i
-			shortest_distance = curr_dist
-	return curr_player
+	if players.front():
+		var shortest_distance : float = global_position.distance_to(players[0].global_position)
+		curr_player = players[0]
+		for i in players:
+			var curr_dist : float = global_position.distance_to(i.global_position)
+			if curr_dist < shortest_distance:
+				curr_player = i
+				shortest_distance = curr_dist
+		return curr_player
+	return
 
 func _damage(damage : int, user : Node) -> void:
 	_set_enemy_health_authority.rpc(str(user.name).to_int())

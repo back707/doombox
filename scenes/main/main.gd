@@ -7,6 +7,8 @@ var wave_amount_interval : int
 @export var spawn_timer : float = 5
 var spawn_timer_length : float
 
+signal restart
+
 func _ready() -> void:
 	##Spawner Priority
 	$MultiplayerSpawner.set_multiplayer_authority(1)
@@ -28,6 +30,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	_spawn_timer(delta)
+	
 
 func _spawn_timer(delta) -> void:
 	spawn_timer -= delta
@@ -47,3 +50,15 @@ func _spawn_wave(amount) -> void:
 			add_child(instance, true)
 			instance.position = $EnemySpawner.position + Vector2(randf_range(-100,100),randf_range(-100,100))
 			amount -= 1
+			
+func _check_restart(player) -> void:
+	for child in get_children():
+		if child is Player and !child.name == player:
+			return
+	print("restart")
+	_restart.rpc()
+	restart.emit()
+	
+@rpc("any_peer","call_local")
+func _restart() -> void:
+	queue_free()
