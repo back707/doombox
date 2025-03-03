@@ -1,4 +1,6 @@
 extends Node2D
+class_name Main
+
 @export var player_scene : PackedScene
 @export var enemy_scene : PackedScene
 @export var wave_amount : int = 1
@@ -6,6 +8,7 @@ extends Node2D
 var wave_amount_interval : int
 @export var spawn_timer : float = 5
 var spawn_timer_length : float
+@export var multispawner : MultiplayerSpawner
 
 signal restart
 
