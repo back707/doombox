@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeaponProgression" load_steps=4 format=3 uid="uid://bsqvvehc8rvli"]
+
+[ext_resource type="Script" path="res://common/classes/weapon.gd" id="1_73odf"]
+[ext_resource type="Script" path="res://common/classes/weapon_progression.gd" id="2_3ifxx"]
+[ext_resource type="Resource" uid="uid://dfr1v7kcxpk6s" path="res://common/resources/weapons/stick_staff.tres" id="2_k0g45"]
+
+[resource]
+script = ExtResource("2_3ifxx")
+weapon = Array[ExtResource("1_73odf")]([ExtResource("2_k0g45"), null, null, null, null])

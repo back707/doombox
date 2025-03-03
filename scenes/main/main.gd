@@ -12,16 +12,19 @@ var spawn_timer_length : float
 
 signal restart
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	##Spawner Priority
 	$MultiplayerSpawner.set_multiplayer_authority(1)
+
+func _ready() -> void:
+	
 	
 	##spawn in players to corresonding spawn points
 	var index = 0 
 	for i in GameManager.players:
 		var current_player = player_scene.instantiate()
 		current_player.name = str(GameManager.players[i].id)
-		add_child(current_player)
+		add_child(current_player, true)
 		for spawn in get_tree().get_nodes_in_group("PlayerSpawnPoint"):
 			if spawn.name == str(index):
 				current_player.global_position = spawn.global_position

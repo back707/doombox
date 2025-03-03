@@ -7,9 +7,9 @@
 [resource]
 script = ExtResource("1_itwet")
 bullet_speed = 355
-fire_attack_speed = 1.0
-pierce = 1
+fire_attack_speed = 1.25
+pierce = 0
 bullet_body = ExtResource("1_ihiwh")
 name = "stick_staff"
-damage = 10
+damage = 15
 sprite = ExtResource("3_4hgln")
