@@ -42,12 +42,13 @@ _data = {
 "circling": SubResource("Animation_6mk8n")
 }
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("multispawner")]
 script = ExtResource("1_u52ay")
 player_scene = ExtResource("1_ukmj5")
 enemy_scene = ExtResource("3_81jyt")
 wave_amount_interval_period = 4
 spawn_timer = 4.0
+multispawner = NodePath("MultiplayerSpawner")
 
 [node name="SpawnLocations" type="Node2D" parent="."]
 

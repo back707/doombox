@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_phm25")
 name = "basic"
-health = 40
+health = 30
 damage = 1
+value = 0
 speed = 75
 texture = ExtResource("2_pt76j")
