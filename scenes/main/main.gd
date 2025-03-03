@@ -8,6 +8,9 @@ var wave_amount_interval : int
 var spawn_timer_length : float
 
 func _ready() -> void:
+	##Spawner Priority
+	$MultiplayerSpawner.set_multiplayer_authority(1)
+	
 	##spawn in players to corresonding spawn points
 	var index = 0 
 	for i in GameManager.players:
@@ -39,8 +42,8 @@ func _spawn_timer(delta) -> void:
 func _spawn_wave(amount) -> void:
 	if multiplayer.get_unique_id() == 1:
 		print("spawned a wave of " + str(amount))
-	while amount > 0:
-		var instance = enemy_scene.instantiate()
-		add_child(instance)
-		instance.position = $EnemySpawner.position + Vector2(randf_range(-100,100),randf_range(-100,100))
-		amount -= 1
+		while amount > 0:
+			var instance = enemy_scene.instantiate()
+			add_child(instance, true)
+			instance.position = $EnemySpawner.position + Vector2(randf_range(-100,100),randf_range(-100,100))
+			amount -= 1

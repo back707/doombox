@@ -70,3 +70,7 @@ position = Vector2(370, -47)
 libraries = {
 "": SubResource("AnimationLibrary_k74se")
 }
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/enemy/enemy.tscn")
+spawn_path = NodePath("..")
