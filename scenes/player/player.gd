@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
+@export var boxes : int = 0
 @export var health : int = 100
 @export var speed : int = 350
 var direction : Vector2 = Vector2.ZERO
@@ -52,6 +53,11 @@ func _process(_delta: float) -> void:
 		
 func _damage(damage : int) -> void:
 	health -= damage
+	
+@rpc("any_peer","call_local")
+func _add_money(money) -> void:
+	boxes += money
+	print("player " + name + "recieved a box! Total: " + str(boxes))
 
 @rpc("any_peer", "call_local")
 func _player_died() -> void:

@@ -1,16 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cersnec0182qp"]
+[gd_scene load_steps=4 format=3 uid="uid://cersnec0182qp"]
 
-[ext_resource type="Texture2D" uid="uid://kc0fnam7jg3" path="res://icon.svg" id="1_k0v11"]
+[ext_resource type="Script" path="res://scenes/box/box.gd" id="1_3uv76"]
+[ext_resource type="Texture2D" uid="uid://detim37xvngds" path="res://sprites/yellow tiny box.png" id="2_4vqk2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d76uh"]
 size = Vector2(12, 12)
 
 [node name="Box" type="Area2D"]
-position = Vector2(231, 181)
+script = ExtResource("1_3uv76")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.101563, 0.101563)
-texture = ExtResource("1_k0v11")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_4vqk2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d76uh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
