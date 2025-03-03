@@ -1,16 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd2pgyltai0nk"]
+[gd_scene load_steps=2 format=3 uid="uid://bd2pgyltai0nk"]
 
 [ext_resource type="Texture2D" uid="uid://b2fpbeqfmubxh" path="res://sprites/stick.png" id="1_7paga"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kmlu"]
-radius = 3.0
 
 [node name="StickScene" type="Sprite2D"]
 position = Vector2(9, 0)
 texture = ExtResource("1_7paga")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_2kmlu")

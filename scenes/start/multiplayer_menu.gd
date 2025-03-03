@@ -53,8 +53,6 @@ func _send_player_information(color_frame : int, id : int) -> void:
 		GameManager.players[id] = {
 			"frame" : color_frame,
 			"id" : id,
-			"weapon" : Weapon,
-			"boxes" : 0
 		}
 	if multiplayer.is_server():
 		for i in GameManager.players:
@@ -64,6 +62,7 @@ func _send_player_information(color_frame : int, id : int) -> void:
 func _start_game() -> void:
 	var scene : Node = load("res://scenes/main/main.tscn").instantiate()
 	get_tree().root.add_child(scene)
+	scene.restart.connect(_start_game.rpc)
 	print("Game started with " + str(GameManager.players.size()) + " players")
 	self.hide()
 

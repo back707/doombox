@@ -35,7 +35,7 @@ properties/6/replication_mode = 1
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_edu77")
-health = 25
+health = 3
 starting_weapon = ExtResource("2_qen74")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -44,7 +44,6 @@ hframes = 5
 region_rect = Rect2(50, 0, 50, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_r312e")
 
 [node name="WeaponNode" parent="." instance=ExtResource("3_nyfqx")]

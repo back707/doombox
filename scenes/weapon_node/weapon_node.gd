@@ -12,12 +12,12 @@ var is_cooling : bool = false
 var starting_rotation : float
 var swing_time : float
 var is_swinging : bool = false
-
+var colide : Area2D 
 
 func _ready() -> void:
 	if weapon is MeleeWeapon: #reset melee weapon cooldowns
 		cooldown = weapon.swing_cooldown
-
+	
 func _process(delta: float) -> void:
 	if is_swinging: #swing!
 		_swing(delta)
@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	
 func _on_weapon_hit(body : Node2D) -> void:
 		if body is Enemy:
-			body._damage(weapon.damage)
+			body._damage(weapon.damage, get_parent())
 
 func _change_weapon(new_weapon : Weapon) -> void: #this can be called to swap to a new weapon
 	weapon = new_weapon
@@ -37,9 +37,11 @@ func _change_weapon(new_weapon : Weapon) -> void: #this can be called to swap to
 	
 	##change weapon collision if melee
 	if weapon is MeleeWeapon:
-		var colide : Area2D = weapon.collision_scene.instantiate()
+		remove_child(colide)
+		colide = weapon.collision_scene.instantiate()
 		add_child(colide)
 		colide.body_entered.connect(_on_weapon_hit)
+		colide.monitoring = false
 		
 		
 func _fire() -> void: # call this when firing off current weapon regardless of type
@@ -52,6 +54,7 @@ func _fire() -> void: # call this when firing off current weapon regardless of t
 
 func _swing(delta) -> void: #this is for the animation for melee weapons
 	if weapon is MeleeWeapon:
+		colide.monitoring = true
 		swing_time -= delta
 		rotation_degrees = starting_rotation - ((swing_time / (1 / weapon.swing_attack_speed)) * weapon.swing_arc)
 		position.x = weapon.swing_distance * abs(2 *(abs((swing_time / (1 / weapon.swing_attack_speed)) - 0.5) - 0.5))
@@ -63,6 +66,7 @@ func _swing(delta) -> void: #this is for the animation for melee weapons
 
 func _cooldown(delta) -> void: # this is for the weapon cooldown
 	if weapon is MeleeWeapon:
+		colide.monitoring = false
 		cooldown -= delta
 		if cooldown <= 0:
 			is_cooling = false
