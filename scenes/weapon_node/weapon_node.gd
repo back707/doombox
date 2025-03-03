@@ -5,6 +5,7 @@ class_name WeaponNode
 @export var weapon : Weapon
 
 ##weapon local variables
+var sprite : Sprite2D 
 var cooldown : float
 var is_cooling : bool = false
 
@@ -17,6 +18,9 @@ var colide : Area2D
 func _ready() -> void:
 	if weapon is MeleeWeapon: #reset melee weapon cooldowns
 		cooldown = weapon.swing_cooldown
+		
+	if weapon is RangedWeapon: #reset range weapon cooldowns
+		cooldown = 1 / weapon.fire_attack_speed
 	
 func _process(delta: float) -> void:
 	if is_swinging: #swing!
@@ -32,7 +36,8 @@ func _change_weapon(new_weapon : Weapon) -> void: #this can be called to swap to
 	weapon = new_weapon
 	
 	##Change Weapon sprite
-	var sprite : Sprite2D = weapon.sprite.instantiate()
+	remove_child(sprite)
+	sprite = weapon.sprite.instantiate()
 	add_child(sprite)
 	
 	##change weapon collision if melee
@@ -43,7 +48,6 @@ func _change_weapon(new_weapon : Weapon) -> void: #this can be called to swap to
 		colide.body_entered.connect(_on_weapon_hit)
 		colide.monitoring = false
 		
-		
 func _fire() -> void: # call this when firing off current weapon regardless of type
 	if weapon is MeleeWeapon:
 		if !is_swinging && !is_cooling:
@@ -51,6 +55,28 @@ func _fire() -> void: # call this when firing off current weapon regardless of t
 			starting_rotation = rotation_degrees
 			swing_time = 1 / weapon.swing_attack_speed
 			is_swinging = true
+	
+	if weapon is RangedWeapon:
+		if !is_cooling:
+			var new_bullet : Bullet = weapon.bullet_body.instantiate()
+			new_bullet.shooter = self
+			new_bullet.speed = weapon.bullet_speed
+			new_bullet.direction = Vector2.from_angle(rotation)
+			is_cooling = true
+
+func _cooldown(delta) -> void: # this is for the weapon cooldown
+	if weapon is MeleeWeapon:
+		colide.monitoring = false
+		cooldown -= delta
+		if cooldown <= 0:
+			is_cooling = false
+			cooldown = weapon.swing_cooldown
+			
+	if weapon is RangedWeapon:
+		cooldown -= delta
+		if cooldown <= 0:
+			is_cooling = false
+			cooldown = 1 / weapon.fire_attack_speed
 
 func _swing(delta) -> void: #this is for the animation for melee weapons
 	if weapon is MeleeWeapon:
@@ -63,11 +89,3 @@ func _swing(delta) -> void: #this is for the animation for melee weapons
 			is_cooling = true
 			position = Vector2(0,0)
 			rotation_degrees = 0
-
-func _cooldown(delta) -> void: # this is for the weapon cooldown
-	if weapon is MeleeWeapon:
-		colide.monitoring = false
-		cooldown -= delta
-		if cooldown <= 0:
-			is_cooling = false
-			cooldown = weapon.swing_cooldown

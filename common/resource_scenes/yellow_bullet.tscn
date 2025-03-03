@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://5v0ai2taqfuv"]
+
+[ext_resource type="Texture2D" uid="uid://detim37xvngds" path="res://sprites/yellow tiny box.png" id="1_j83ns"]
+[ext_resource type="Script" path="res://common/classes/bullet.gd" id="1_vtdw1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpkcq"]
+size = Vector2(8, 8)
+
+[node name="yellow_bullet" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_vtdw1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j83ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rpkcq")
