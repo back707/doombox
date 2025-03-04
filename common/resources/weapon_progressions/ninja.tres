@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponProgression" load_steps=8 format=3 uid="uid://bh5tvcl438lta"]
+
+[ext_resource type="Script" path="res://common/classes/weapon_progression.gd" id="1_4k8qw"]
+[ext_resource type="Script" path="res://common/classes/weapon.gd" id="2_1dp7a"]
+[ext_resource type="Resource" uid="uid://brbwqp7qomwev" path="res://common/resources/weapons/ninja/training_staff.tres" id="3_rwwfw"]
+[ext_resource type="Resource" uid="uid://c7k4ox4me4o1n" path="res://common/resources/weapons/ninja/sai.tres" id="4_v02ah"]
+[ext_resource type="Resource" uid="uid://bamn6bb2o8p14" path="res://common/resources/weapons/ninja/star.tres" id="5_61w80"]
+[ext_resource type="Resource" uid="uid://01ja4vqyju2f" path="res://common/resources/weapons/ninja/kunai.tres" id="6_12red"]
+[ext_resource type="Resource" uid="uid://bc56n3110qc30" path="res://common/resources/weapons/ninja/katana.tres" id="7_8wdmr"]
+
+[resource]
+script = ExtResource("1_4k8qw")
+weapon = Array[ExtResource("2_1dp7a")]([ExtResource("3_rwwfw"), ExtResource("4_v02ah"), ExtResource("5_61w80"), ExtResource("6_12red"), ExtResource("7_8wdmr")])

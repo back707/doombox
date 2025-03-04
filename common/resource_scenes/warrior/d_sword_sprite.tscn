@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://du6bdfxona86s"]
+
+[ext_resource type="Texture2D" uid="uid://dc0bmp3272837" path="res://sprites/double_blade.png" id="1_bfa5y"]
+
+[node name="DSwordSprite" type="Sprite2D"]
+position = Vector2(21, 0)
+texture = ExtResource("1_bfa5y")

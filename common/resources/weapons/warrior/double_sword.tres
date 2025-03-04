@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=4 format=3 uid="uid://b30ci2li8crga"]
+
+[ext_resource type="Script" path="res://common/classes/melee_weapon.gd" id="1_04v8h"]
+[ext_resource type="PackedScene" uid="uid://cvcrtyq2upup5" path="res://common/resource_scenes/warrior/area_d_sword.tscn" id="1_lft4q"]
+[ext_resource type="PackedScene" uid="uid://du6bdfxona86s" path="res://common/resource_scenes/warrior/d_sword_sprite.tscn" id="3_2xqj7"]
+
+[resource]
+script = ExtResource("1_04v8h")
+swing_cooldown = 0.3
+swing_attack_speed = 2.0
+swing_distance = 55.0
+swing_arc = 340.0
+collision_scene = ExtResource("1_lft4q")
+name = "double_sword"
+damage = 15
+sprite = ExtResource("3_2xqj7")

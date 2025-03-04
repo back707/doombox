@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=4 format=3 uid="uid://brbwqp7qomwev"]
+
+[ext_resource type="PackedScene" uid="uid://darjgafdd1k6a" path="res://common/resource_scenes/ninja/area_staff.tscn" id="1_e0y15"]
+[ext_resource type="Script" path="res://common/classes/melee_weapon.gd" id="1_gmskp"]
+[ext_resource type="PackedScene" uid="uid://cl6smj83kokcd" path="res://common/resource_scenes/ninja/sprite_staff.tscn" id="3_ahv0v"]
+
+[resource]
+script = ExtResource("1_gmskp")
+swing_cooldown = 0.2
+swing_attack_speed = 2.0
+swing_distance = 45.0
+swing_arc = 160.0
+collision_scene = ExtResource("1_e0y15")
+name = "staff"
+damage = 10
+sprite = ExtResource("3_ahv0v")

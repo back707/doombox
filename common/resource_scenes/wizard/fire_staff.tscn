@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwphswwerxg0m"]
+
+[ext_resource type="Texture2D" uid="uid://bo63f3l0b7ekh" path="res://sprites/fire_wand.png" id="1_sx2gt"]
+
+[node name="FireStaff" type="Sprite2D"]
+position = Vector2(12, 0)
+texture = ExtResource("1_sx2gt")

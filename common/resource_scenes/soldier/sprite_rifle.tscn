@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://lppo1dwql4if"]
+
+[ext_resource type="Texture2D" uid="uid://bt3hub441t73x" path="res://sprites/longgun.png" id="1_sxp3l"]
+
+[node name="SpriteRifle" type="Sprite2D"]
+texture = ExtResource("1_sxp3l")

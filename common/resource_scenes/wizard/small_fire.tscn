@@ -1,20 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://5v0ai2taqfuv"]
 
-[ext_resource type="Texture2D" uid="uid://detim37xvngds" path="res://sprites/yellow tiny box.png" id="1_j83ns"]
-[ext_resource type="Script" path="res://common/classes/bullet.gd" id="1_vtdw1"]
+[ext_resource type="Script" path="res://common/classes/bullet.gd" id="1_ihovb"]
+[ext_resource type="Texture2D" uid="uid://detim37xvngds" path="res://sprites/yellow tiny box.png" id="2_yeua5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpkcq"]
 size = Vector2(8, 8)
 
-[node name="yellow_bullet" type="CharacterBody2D"]
+[node name="small_fire" type="CharacterBody2D" node_paths=PackedStringArray("onscreen_notifier")]
+position = Vector2(1, 0)
 collision_layer = 4
 collision_mask = 2
 motion_mode = 1
-script = ExtResource("1_vtdw1")
+script = ExtResource("1_ihovb")
+onscreen_notifier = NodePath("VisibleOnScreenNotifier2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.930121, 0.364543, 0, 1)
-texture = ExtResource("1_j83ns")
+texture = ExtResource("2_yeua5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rpkcq")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cafe7m4r520j0"]
+
+[node name="AreaVoidRake" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(119, -4)
+scale = Vector2(2, 2)
+polygon = PackedVector2Array(-51.5, 4.5, -31.5, -13, 26, 11, 44.5, -38, 61, -16, 54.5, 29, 25, 40.5, -10, 31, -32.5, 9, -55, 11.5)

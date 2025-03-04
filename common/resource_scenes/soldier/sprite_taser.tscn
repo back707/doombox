@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf08vnv8rrvlo"]
+
+[ext_resource type="Texture2D" uid="uid://cxb67xpmh08ft" path="res://sprites/taser.png" id="1_q6u2q"]
+
+[node name="SpriteTaser" type="Sprite2D"]
+position = Vector2(15, 0)
+texture = ExtResource("1_q6u2q")

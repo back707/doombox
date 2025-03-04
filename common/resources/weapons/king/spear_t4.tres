@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=4 format=3 uid="uid://edomybb3ju51"]
+
+[ext_resource type="PackedScene" uid="uid://h3vj1o0c0vg0" path="res://common/resource_scenes/king/area_spear.tscn" id="1_dwc1n"]
+[ext_resource type="Script" path="res://common/classes/melee_weapon.gd" id="2_h24wq"]
+[ext_resource type="PackedScene" uid="uid://dnhykar3sy5l0" path="res://common/resource_scenes/king/sprite_spear.tscn" id="3_85hl1"]
+
+[resource]
+script = ExtResource("2_h24wq")
+swing_cooldown = 0.15
+swing_attack_speed = 1.75
+swing_distance = 100.0
+swing_arc = 0.0
+collision_scene = ExtResource("1_dwc1n")
+name = "spear"
+damage = 15
+sprite = ExtResource("3_85hl1")

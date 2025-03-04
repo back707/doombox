@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponProgression" load_steps=8 format=3 uid="uid://cxkd6spr1o61x"]
+
+[ext_resource type="Script" path="res://common/classes/weapon_progression.gd" id="1_6qgcu"]
+[ext_resource type="Script" path="res://common/classes/weapon.gd" id="2_c7opq"]
+[ext_resource type="Resource" uid="uid://6f4mg3uo7or5" path="res://common/resources/weapons/king/spear.tres" id="3_w0wlt"]
+[ext_resource type="Resource" uid="uid://dcqxoo63a7sjd" path="res://common/resources/weapons/king/spear_t2.tres" id="4_4lju5"]
+[ext_resource type="Resource" uid="uid://g21dcofxsqal" path="res://common/resources/weapons/king/spear_t3.tres" id="5_p61bx"]
+[ext_resource type="Resource" uid="uid://edomybb3ju51" path="res://common/resources/weapons/king/spear_t4.tres" id="6_bftap"]
+[ext_resource type="Resource" uid="uid://drvmnu51v8jw6" path="res://common/resources/weapons/king/spear_t5.tres" id="7_ln8qc"]
+
+[resource]
+script = ExtResource("1_6qgcu")
+weapon = Array[ExtResource("2_c7opq")]([ExtResource("3_w0wlt"), ExtResource("4_4lju5"), ExtResource("5_p61bx"), ExtResource("6_bftap"), ExtResource("7_ln8qc")])

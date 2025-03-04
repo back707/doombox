@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnofc8r1n6qdu"]
+
+[ext_resource type="Texture2D" uid="uid://bkmhanv7111xn" path="res://sprites/katana.png" id="1_pns2m"]
+
+[node name="SpriteKatana" type="Sprite2D"]
+position = Vector2(26, -5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_pns2m")

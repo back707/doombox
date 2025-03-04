@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2rnmsg40twug"]
+
+[ext_resource type="Texture2D" uid="uid://ftxclme3e2n6" path="res://sprites/void rake.png" id="1_y6pvw"]
+
+[node name="VoidRake" type="Sprite2D"]
+position = Vector2(119, -4)
+scale = Vector2(2, 2)
+texture = ExtResource("1_y6pvw")

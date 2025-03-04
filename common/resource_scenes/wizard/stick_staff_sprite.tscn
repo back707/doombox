@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://darka5lxnvbvn"]
 
-[ext_resource type="Texture2D" uid="uid://bytjvuiy8tykj" path="res://sprites/fire_stick.png" id="1_rjiqc"]
+[ext_resource type="Texture2D" uid="uid://bytjvuiy8tykj" path="res://sprites/fire_stick.png" id="1_n5g2r"]
 
 [node name="StickStaff" type="Sprite2D"]
 position = Vector2(10, 0)
-texture = ExtResource("1_rjiqc")
+texture = ExtResource("1_n5g2r")

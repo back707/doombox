@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=4 format=3 uid="uid://c7k4ox4me4o1n"]
+
+[ext_resource type="PackedScene" uid="uid://dx1siqtrmhn0h" path="res://common/resource_scenes/ninja/area_sai.tscn" id="1_e77f2"]
+[ext_resource type="Script" path="res://common/classes/melee_weapon.gd" id="1_ovgwg"]
+[ext_resource type="PackedScene" uid="uid://cfskjtgu2tbht" path="res://common/resource_scenes/ninja/sprite_sai.tscn" id="3_2jtpr"]
+
+[resource]
+script = ExtResource("1_ovgwg")
+swing_cooldown = 0.0
+swing_attack_speed = 4.0
+swing_distance = 65.0
+swing_arc = 0.0
+collision_scene = ExtResource("1_e77f2")
+name = "sai"
+damage = 5
+sprite = ExtResource("3_2jtpr")

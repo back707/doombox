@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://8iivcycxicjc"]
+
+[ext_resource type="Texture2D" uid="uid://cw8vrpiiscevf" path="res://sprites/sniper.png" id="1_u6wwk"]
+
+[node name="SpriteSniper" type="Sprite2D"]
+modulate = Color(0.7, 0.7, 0.7, 1)
+position = Vector2(21, 0)
+texture = ExtResource("1_u6wwk")

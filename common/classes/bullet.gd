@@ -7,10 +7,10 @@ var speed : int
 var direction : Vector2
 var collision : KinematicCollision2D
 
-@export var
+@export var onscreen_notifier : VisibleOnScreenNotifier2D
 
 func _ready() -> void:
-	
+	onscreen_notifier.screen_exited.connect(_delete.rpc)
 
 func _process(delta: float) -> void:
 	collision = move_and_collide(direction * speed * delta)

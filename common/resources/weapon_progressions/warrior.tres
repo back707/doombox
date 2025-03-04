@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponProgression" load_steps=8 format=3 uid="uid://b45tvqqx412f5"]
+
+[ext_resource type="Script" path="res://common/classes/weapon_progression.gd" id="1_wdb6j"]
+[ext_resource type="Script" path="res://common/classes/weapon.gd" id="2_gynn6"]
+[ext_resource type="Resource" uid="uid://km7hk3dwbqu7" path="res://common/resources/weapons/warrior/sword.tres" id="3_y11b5"]
+[ext_resource type="Resource" uid="uid://b30ci2li8crga" path="res://common/resources/weapons/warrior/double_sword.tres" id="4_yn6ab"]
+[ext_resource type="Resource" uid="uid://ckfp101fqui3" path="res://common/resources/weapons/warrior/axe.tres" id="5_buugv"]
+[ext_resource type="Resource" uid="uid://t2skygh4pcpb" path="res://common/resources/weapons/warrior/fire_axe.tres" id="6_njobj"]
+[ext_resource type="Resource" uid="uid://egjissscpm5v" path="res://common/resources/weapons/warrior/void_rake.tres" id="7_7ky4m"]
+
+[resource]
+script = ExtResource("1_wdb6j")
+weapon = Array[ExtResource("2_gynn6")]([ExtResource("3_y11b5"), ExtResource("4_yn6ab"), ExtResource("5_buugv"), ExtResource("6_njobj"), ExtResource("7_7ky4m")])

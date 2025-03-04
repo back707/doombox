@@ -97,4 +97,5 @@ func _spawn_bullet() -> void:
 				new_bullet.shooter = self
 				new_bullet.speed = weapon.bullet_speed
 				new_bullet.direction = Vector2.from_angle(get_parent().rotation)
+				new_bullet.rotation = get_parent().rotation
 				is_cooling = true

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7us0vb10hy53"]
+
+[ext_resource type="Texture2D" uid="uid://d4ak0x5le017f" path="res://sprites/fire spade.png" id="1_f5yoi"]
+
+[node name="FireAxeSprite" type="Sprite2D"]
+position = Vector2(39, -4)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_f5yoi")

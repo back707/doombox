@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfskjtgu2tbht"]
+
+[ext_resource type="Texture2D" uid="uid://cm7pvdxpg2twk" path="res://sprites/sai.png" id="1_ar5q1"]
+
+[node name="SpriteSai" type="Sprite2D"]
+position = Vector2(22, 0)
+texture = ExtResource("1_ar5q1")

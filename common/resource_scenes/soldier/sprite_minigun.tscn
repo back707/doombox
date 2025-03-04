@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dycfs3rrc65cb"]
+
+[ext_resource type="Texture2D" uid="uid://binxlycmlin1v" path="res://sprites/minigun.png" id="1_rx8os"]
+
+[node name="SpriteMinigun" type="Sprite2D"]
+modulate = Color(0.6, 0.6, 0.6, 1)
+position = Vector2(23, -4)
+texture = ExtResource("1_rx8os")

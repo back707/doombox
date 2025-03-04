@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl6smj83kokcd"]
+
+[ext_resource type="Texture2D" uid="uid://bq0lqi7c106ny" path="res://sprites/training staff.png" id="1_0chjx"]
+
+[node name="SpriteStaff" type="Sprite2D"]
+position = Vector2(16, -1)
+texture = ExtResource("1_0chjx")
