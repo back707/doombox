@@ -7,6 +7,11 @@ var speed : int
 var direction : Vector2
 var collision : KinematicCollision2D
 
+@export var
+
+func _ready() -> void:
+	
+
 func _process(delta: float) -> void:
 	collision = move_and_collide(direction * speed * delta)
 	if shooter != null:
