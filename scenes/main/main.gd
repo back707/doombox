@@ -4,9 +4,9 @@ class_name Main
 @export var player_scene : PackedScene
 @export var enemy_scene : PackedScene
 @export var wave_amount : int = 1
-@export var wave_amount_interval_period : int = 3
+@export var wave_amount_interval_period : int = 4
 var wave_amount_interval : int
-@export var spawn_timer : float = 5
+@export var spawn_timer : float = 2.5
 var spawn_timer_length : float
 @export var multispawner : MultiplayerSpawner
 

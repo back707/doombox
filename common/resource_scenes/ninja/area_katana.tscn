@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://duhcedtt4p8ar"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n1e21"]
+radius = 4.80356
+height = 44.8135
+
+[node name="AreaKatana" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(51, -13)
+rotation = 1.1013
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_n1e21")

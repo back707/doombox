@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RangedWeapon" load_steps=4 format=3 uid="uid://bamn6bb2o8p14"]
+
+[ext_resource type="PackedScene" uid="uid://dkhkcghs1gtn" path="res://common/resource_scenes/ninja/bullet_star.tscn" id="1_n8rvw"]
+[ext_resource type="Script" path="res://common/classes/ranged_weapon.gd" id="1_uivot"]
+[ext_resource type="PackedScene" uid="uid://caqiub1fqra8x" path="res://common/resource_scenes/ninja/sprite_star.tscn" id="3_6rrqv"]
+
+[resource]
+script = ExtResource("1_uivot")
+bullet_speed = 650
+fire_attack_speed = 2.0
+pierce = 0
+bullet_body = ExtResource("1_n8rvw")
+name = "ninja_star"
+damage = 15
+sprite = ExtResource("3_6rrqv")

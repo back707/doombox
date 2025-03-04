@@ -149,6 +149,48 @@ offset_bottom = 550.0
 placeholder_text = "IP address"
 max_length = 15
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 429.0
+offset_right = 449.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Wizard"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 429.0
+offset_right = 503.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Warrior"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 428.0
+offset_right = 557.0
+offset_bottom = 451.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Ninja
+"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 429.0
+offset_right = 612.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Soldier
+"
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Cyan" to="." method="_on_cyan_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Orange" to="." method="_on_orange_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Purple" to="." method="_on_purple_pressed"]

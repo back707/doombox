@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dct4pfwph8l3t"]
+
+[ext_resource type="Script" path="res://common/classes/bullet.gd" id="1_7jms8"]
+[ext_resource type="Texture2D" uid="uid://yvt1viog68r0" path="res://sprites/lightning.png" id="2_p4ji7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eje4g"]
+size = Vector2(29, 9)
+
+[node name="Lightning" type="CharacterBody2D" node_paths=PackedStringArray("onscreen_notifier")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_7jms8")
+onscreen_notifier = NodePath("VisibleOnScreenNotifier2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_eje4g")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1.45, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p4ji7")

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RangedWeapon" load_steps=4 format=3 uid="uid://bcld0j2kabni"]
+
+[ext_resource type="PackedScene" uid="uid://dct4pfwph8l3t" path="res://common/resource_scenes/wizard/lightning.tscn" id="1_mhh0p"]
+[ext_resource type="Script" path="res://common/classes/ranged_weapon.gd" id="2_k7qjg"]
+[ext_resource type="PackedScene" uid="uid://bmfnxcvo8v1m1" path="res://common/resource_scenes/wizard/lightning_staff_sprite.tscn" id="3_nsqxe"]
+
+[resource]
+script = ExtResource("2_k7qjg")
+bullet_speed = 4000
+fire_attack_speed = 4.0
+pierce = 0
+bullet_body = ExtResource("1_mhh0p")
+name = "lightning_staff"
+damage = 30
+sprite = ExtResource("3_nsqxe")

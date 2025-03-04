@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="WeaponProgression" load_steps=4 format=3 uid="uid://bsqvvehc8rvli"]
+[gd_resource type="Resource" script_class="WeaponProgression" load_steps=8 format=3 uid="uid://bsqvvehc8rvli"]
 
 [ext_resource type="Script" path="res://common/classes/weapon.gd" id="1_73odf"]
 [ext_resource type="Script" path="res://common/classes/weapon_progression.gd" id="2_3ifxx"]
-[ext_resource type="Resource" uid="uid://dfr1v7kcxpk6s" path="res://common/resources/weapons/stick_staff.tres" id="2_k0g45"]
+[ext_resource type="Resource" uid="uid://dfr1v7kcxpk6s" path="res://common/resources/weapons/wizard/stick_staff.tres" id="2_k0g45"]
+[ext_resource type="Resource" uid="uid://c6qgy2urymad1" path="res://common/resources/weapons/wizard/fire_ball_staff.tres" id="4_odf3j"]
+[ext_resource type="Resource" uid="uid://ccddkqb3ndiys" path="res://common/resources/weapons/wizard/magic_missile_wand.tres" id="5_popkx"]
+[ext_resource type="Resource" uid="uid://djcm8cwq7qibp" path="res://common/resources/weapons/wizard/flamethrower.tres" id="6_1fach"]
+[ext_resource type="Resource" uid="uid://bcld0j2kabni" path="res://common/resources/weapons/wizard/lightning_staff.tres" id="7_qfwt1"]
 
 [resource]
 script = ExtResource("2_3ifxx")
-weapon = Array[ExtResource("1_73odf")]([ExtResource("2_k0g45"), null, null, null, null])
+weapon = Array[ExtResource("1_73odf")]([ExtResource("2_k0g45"), ExtResource("4_odf3j"), ExtResource("5_popkx"), ExtResource("6_1fach"), ExtResource("7_qfwt1")])

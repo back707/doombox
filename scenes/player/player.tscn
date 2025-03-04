@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://ur0ht5os2red"]
+[gd_scene load_steps=12 format=3 uid="uid://ur0ht5os2red"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_edu77"]
 [ext_resource type="Resource" uid="uid://dbgxvnfkjo27b" path="res://common/resources/weapons/stick.tres" id="2_gg2s6"]
+[ext_resource type="Resource" uid="uid://cxkd6spr1o61x" path="res://common/resources/weapon_progressions/king.tres" id="3_5nij2"]
 [ext_resource type="Texture2D" uid="uid://cgsnmf8fdl3ta" path="res://sprites/boxcolors.png" id="3_7kjab"]
 [ext_resource type="PackedScene" uid="uid://bukhpqfft0vmu" path="res://scenes/weapon_node/weapon_node.tscn" id="3_nyfqx"]
 [ext_resource type="Resource" uid="uid://bsqvvehc8rvli" path="res://common/resources/weapon_progressions/wizard.tres" id="3_t1m7s"]
+[ext_resource type="Resource" uid="uid://b45tvqqx412f5" path="res://common/resources/weapon_progressions/warrior.tres" id="4_8d1oa"]
+[ext_resource type="Resource" uid="uid://bh5tvcl438lta" path="res://common/resources/weapon_progressions/ninja.tres" id="5_2rwoh"]
+[ext_resource type="Resource" uid="uid://cosm6nsv2mvci" path="res://common/resources/weapon_progressions/soldier.tres" id="7_p7o00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r312e"]
 size = Vector2(32, 33)
@@ -36,9 +40,14 @@ properties/6/replication_mode = 1
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_edu77")
-health = 3
+health = 5
+speed = 325
 starting_weapon = ExtResource("2_gg2s6")
+king_progression = ExtResource("3_5nij2")
 wizard_progression = ExtResource("3_t1m7s")
+warrior_progression = ExtResource("4_8d1oa")
+ninja_progression = ExtResource("5_2rwoh")
+soldier_progression = ExtResource("7_p7o00")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_7kjab")

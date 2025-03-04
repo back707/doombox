@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=4 format=3 uid="uid://km7hk3dwbqu7"]
+
+[ext_resource type="PackedScene" uid="uid://b2yrxtl2u3ds" path="res://common/resource_scenes/warrior/area_sword.tscn" id="1_fffea"]
+[ext_resource type="Script" path="res://common/classes/melee_weapon.gd" id="1_pc0hf"]
+[ext_resource type="PackedScene" uid="uid://lr8dq0c46ifi" path="res://common/resource_scenes/warrior/sword_sprite.tscn" id="3_xjtir"]
+
+[resource]
+script = ExtResource("1_pc0hf")
+swing_cooldown = 0.3
+swing_attack_speed = 2.0
+swing_distance = 30.0
+swing_arc = 120.0
+collision_scene = ExtResource("1_fffea")
+name = "sword"
+damage = 15
+sprite = ExtResource("3_xjtir")

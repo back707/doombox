@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bobsjgc8mth2"]
+
+[ext_resource type="Texture2D" uid="uid://c8l2t43lbugba" path="res://sprites/magic_missile_wand.png" id="1_tfl1r"]
+
+[node name="MagicWandSprite" type="Sprite2D"]
+position = Vector2(16, 0)
+texture = ExtResource("1_tfl1r")

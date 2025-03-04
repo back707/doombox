@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkprvis4f44n5"]
+
+[ext_resource type="Texture2D" uid="uid://b0vmvy6qgpu1m" path="res://sprites/kunai.png" id="1_txcgs"]
+
+[node name="SpriteKunai" type="Sprite2D"]
+position = Vector2(13, 0)
+texture = ExtResource("1_txcgs")

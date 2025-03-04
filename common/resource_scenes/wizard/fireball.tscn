@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c82ngf856ht21"]
+
+[ext_resource type="Script" path="res://common/classes/bullet.gd" id="1_116qf"]
+[ext_resource type="Texture2D" uid="uid://cc21st1j7px7n" path="res://sprites/fire ball.png" id="2_aayb0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8pj0l"]
+radius = 8.0
+
+[node name="Fireball" type="CharacterBody2D" node_paths=PackedStringArray("onscreen_notifier")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_116qf")
+onscreen_notifier = NodePath("VisibleOnScreenNotifier2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_aayb0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8pj0l")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(8.9407e-08, 4.76837e-07)
+scale = Vector2(0.6, 0.6)
