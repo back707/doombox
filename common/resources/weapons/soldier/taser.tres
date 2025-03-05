@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RangedWeapon" load_steps=4 format=3 uid="uid://dt30vcstyfacb"]
 
 [ext_resource type="PackedScene" uid="uid://dct4pfwph8l3t" path="res://common/resource_scenes/wizard/lightning.tscn" id="1_kghrc"]
-[ext_resource type="Script" path="res://common/classes/ranged_weapon.gd" id="1_y12hx"]
+[ext_resource type="Script" uid="uid://bvfxi50a85554" path="res://common/classes/ranged_weapon.gd" id="1_y12hx"]
 [ext_resource type="PackedScene" uid="uid://cf08vnv8rrvlo" path="res://common/resource_scenes/soldier/sprite_taser.tscn" id="3_6ja3j"]
 
 [resource]

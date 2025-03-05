@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponProgression" load_steps=8 format=3 uid="uid://cosm6nsv2mvci"]
 
-[ext_resource type="Script" path="res://common/classes/weapon_progression.gd" id="1_cvxua"]
-[ext_resource type="Script" path="res://common/classes/weapon.gd" id="2_p2u4j"]
+[ext_resource type="Script" uid="uid://b11jilagc55mx" path="res://common/classes/weapon_progression.gd" id="1_cvxua"]
+[ext_resource type="Script" uid="uid://damgv401co18h" path="res://common/classes/weapon.gd" id="2_p2u4j"]
 [ext_resource type="Resource" uid="uid://dt30vcstyfacb" path="res://common/resources/weapons/soldier/taser.tres" id="3_010e2"]
 [ext_resource type="Resource" uid="uid://cr0wt1sgvc0q1" path="res://common/resources/weapons/soldier/pistol.tres" id="4_wy6gy"]
 [ext_resource type="Resource" uid="uid://6kb4tr6je4js" path="res://common/resources/weapons/soldier/rifle.tres" id="5_kdoji"]

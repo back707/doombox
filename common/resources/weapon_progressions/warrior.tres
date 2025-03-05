@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponProgression" load_steps=8 format=3 uid="uid://b45tvqqx412f5"]
 
-[ext_resource type="Script" path="res://common/classes/weapon_progression.gd" id="1_wdb6j"]
-[ext_resource type="Script" path="res://common/classes/weapon.gd" id="2_gynn6"]
+[ext_resource type="Script" uid="uid://b11jilagc55mx" path="res://common/classes/weapon_progression.gd" id="1_wdb6j"]
+[ext_resource type="Script" uid="uid://damgv401co18h" path="res://common/classes/weapon.gd" id="2_gynn6"]
 [ext_resource type="Resource" uid="uid://km7hk3dwbqu7" path="res://common/resources/weapons/warrior/sword.tres" id="3_y11b5"]
 [ext_resource type="Resource" uid="uid://b30ci2li8crga" path="res://common/resources/weapons/warrior/double_sword.tres" id="4_yn6ab"]
 [ext_resource type="Resource" uid="uid://ckfp101fqui3" path="res://common/resources/weapons/warrior/axe.tres" id="5_buugv"]

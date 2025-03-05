@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RangedWeapon" load_steps=4 format=3 uid="uid://ccddkqb3ndiys"]
 
 [ext_resource type="PackedScene" uid="uid://dajhbm74rlcsp" path="res://common/resource_scenes/wizard/magic_missile.tscn" id="1_6ahso"]
-[ext_resource type="Script" path="res://common/classes/ranged_weapon.gd" id="2_jgijv"]
+[ext_resource type="Script" uid="uid://bvfxi50a85554" path="res://common/classes/ranged_weapon.gd" id="2_jgijv"]
 [ext_resource type="PackedScene" uid="uid://bobsjgc8mth2" path="res://common/resource_scenes/wizard/magic_wand_sprite.tscn" id="3_8w33w"]
 
 [resource]

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MeleeWeapon" load_steps=4 format=3 uid="uid://ckfp101fqui3"]
 
 [ext_resource type="PackedScene" uid="uid://b60mpd68abaib" path="res://common/resource_scenes/warrior/area_axe.tscn" id="1_50lwc"]
-[ext_resource type="Script" path="res://common/classes/melee_weapon.gd" id="1_nm3su"]
+[ext_resource type="Script" uid="uid://btsmla1y0p7tf" path="res://common/classes/melee_weapon.gd" id="1_nm3su"]
 [ext_resource type="PackedScene" uid="uid://clauhtba1blrd" path="res://common/resource_scenes/warrior/axe_sprite.tscn" id="3_6os6l"]
 
 [resource]

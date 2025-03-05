@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cpswt0ejjkk0q"]
 
-[ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_0eeqh"]
+[ext_resource type="Script" uid="uid://2gqlp0cqc3xp" path="res://scenes/enemy/enemy.gd" id="1_0eeqh"]
 [ext_resource type="Resource" uid="uid://bj1ni0k8vpef1" path="res://common/resources/enemies/basic.tres" id="2_1a6i3"]
 [ext_resource type="Texture2D" uid="uid://bl8dqln21pgw5" path="res://sprites/redbox.png" id="3_qbaab"]
 [ext_resource type="PackedScene" uid="uid://cersnec0182qp" path="res://scenes/box/box.tscn" id="3_ydom1"]
@@ -45,8 +45,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qdp2m"]
 _data = {
-"RESET": SubResource("Animation_uglyh"),
-"attacking": SubResource("Animation_tnihb")
+&"RESET": SubResource("Animation_uglyh"),
+&"attacking": SubResource("Animation_tnihb")
 }
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_kyndm"]

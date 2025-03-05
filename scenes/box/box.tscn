@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cersnec0182qp"]
 
-[ext_resource type="Script" path="res://scenes/box/box.gd" id="1_3uv76"]
+[ext_resource type="Script" uid="uid://ckqwgplaqqn77" path="res://scenes/box/box.gd" id="1_3uv76"]
 [ext_resource type="Texture2D" uid="uid://detim37xvngds" path="res://sprites/yellow tiny box.png" id="2_4vqk2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d76uh"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dajhbm74rlcsp"]
 
-[ext_resource type="Script" path="res://common/classes/bullet.gd" id="1_o08vy"]
+[ext_resource type="Script" uid="uid://bbavwhkrtx5ap" path="res://common/classes/bullet.gd" id="1_o08vy"]
 [ext_resource type="Texture2D" uid="uid://bqak458ntxlhr" path="res://sprites/magic missle.png" id="2_sjjwh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mkowf"]

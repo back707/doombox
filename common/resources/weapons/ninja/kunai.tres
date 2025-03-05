@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RangedWeapon" load_steps=4 format=3 uid="uid://01ja4vqyju2f"]
 
 [ext_resource type="PackedScene" uid="uid://c887qqixwhhx0" path="res://common/resource_scenes/ninja/bullet_kunai.tscn" id="1_kulqa"]
-[ext_resource type="Script" path="res://common/classes/ranged_weapon.gd" id="1_p16sf"]
+[ext_resource type="Script" uid="uid://bvfxi50a85554" path="res://common/classes/ranged_weapon.gd" id="1_p16sf"]
 [ext_resource type="PackedScene" uid="uid://bkprvis4f44n5" path="res://common/resource_scenes/ninja/sprite_kunai.tscn" id="3_xeh1u"]
 
 [resource]

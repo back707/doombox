@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="RangedWeapon" load_steps=4 format=3 uid="uid://6kb4tr6je4js"]
 
-[ext_resource type="Script" path="res://common/classes/ranged_weapon.gd" id="1_ix5e7"]
+[ext_resource type="Script" uid="uid://bvfxi50a85554" path="res://common/classes/ranged_weapon.gd" id="1_ix5e7"]
 [ext_resource type="PackedScene" uid="uid://bsm5aua4gl8jb" path="res://common/resource_scenes/soldier/bullet_bullet.tscn" id="1_yfdmb"]
 [ext_resource type="PackedScene" uid="uid://lppo1dwql4if" path="res://common/resource_scenes/soldier/sprite_rifle.tscn" id="3_5kdsf"]
 

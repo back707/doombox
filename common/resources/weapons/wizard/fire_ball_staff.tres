@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RangedWeapon" load_steps=4 format=3 uid="uid://c6qgy2urymad1"]
 
 [ext_resource type="PackedScene" uid="uid://c82ngf856ht21" path="res://common/resource_scenes/wizard/fireball.tscn" id="1_hrr5x"]
-[ext_resource type="Script" path="res://common/classes/ranged_weapon.gd" id="2_tneq4"]
+[ext_resource type="Script" uid="uid://bvfxi50a85554" path="res://common/classes/ranged_weapon.gd" id="2_tneq4"]
 [ext_resource type="PackedScene" uid="uid://bwphswwerxg0m" path="res://common/resource_scenes/wizard/fire_staff.tscn" id="3_j5v1k"]
 
 [resource]

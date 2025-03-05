@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MeleeWeapon" load_steps=4 format=3 uid="uid://bc56n3110qc30"]
 
-[ext_resource type="Script" path="res://common/classes/melee_weapon.gd" id="1_a7rc3"]
+[ext_resource type="Script" uid="uid://btsmla1y0p7tf" path="res://common/classes/melee_weapon.gd" id="1_a7rc3"]
 [ext_resource type="PackedScene" uid="uid://duhcedtt4p8ar" path="res://common/resource_scenes/ninja/area_katana.tscn" id="1_ur5gg"]
 [ext_resource type="PackedScene" uid="uid://dnofc8r1n6qdu" path="res://common/resource_scenes/ninja/sprite_katana.tscn" id="2_4drv3"]
 

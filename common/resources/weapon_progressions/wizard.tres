@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponProgression" load_steps=8 format=3 uid="uid://bsqvvehc8rvli"]
 
-[ext_resource type="Script" path="res://common/classes/weapon.gd" id="1_73odf"]
-[ext_resource type="Script" path="res://common/classes/weapon_progression.gd" id="2_3ifxx"]
+[ext_resource type="Script" uid="uid://damgv401co18h" path="res://common/classes/weapon.gd" id="1_73odf"]
+[ext_resource type="Script" uid="uid://b11jilagc55mx" path="res://common/classes/weapon_progression.gd" id="2_3ifxx"]
 [ext_resource type="Resource" uid="uid://dfr1v7kcxpk6s" path="res://common/resources/weapons/wizard/stick_staff.tres" id="2_k0g45"]
 [ext_resource type="Resource" uid="uid://c6qgy2urymad1" path="res://common/resources/weapons/wizard/fire_ball_staff.tres" id="4_odf3j"]
 [ext_resource type="Resource" uid="uid://ccddkqb3ndiys" path="res://common/resources/weapons/wizard/magic_missile_wand.tres" id="5_popkx"]

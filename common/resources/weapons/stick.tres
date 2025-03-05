@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bd2pgyltai0nk" path="res://common/resource_scenes/stick_scene.tscn" id="1_4p14y"]
 [ext_resource type="PackedScene" uid="uid://wkb0ct8njiia" path="res://common/resource_scenes/area_2d_stick.tscn" id="2_8yimn"]
-[ext_resource type="Script" path="res://common/classes/melee_weapon.gd" id="3_ba666"]
+[ext_resource type="Script" uid="uid://btsmla1y0p7tf" path="res://common/classes/melee_weapon.gd" id="3_ba666"]
 
 [resource]
 script = ExtResource("3_ba666")

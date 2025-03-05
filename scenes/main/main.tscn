@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://btgd4u35f5so5"]
 
-[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_u52ay"]
+[ext_resource type="Script" uid="uid://1kxk5ybnqnhd" path="res://scenes/main/main.gd" id="1_u52ay"]
 [ext_resource type="PackedScene" uid="uid://ur0ht5os2red" path="res://scenes/player/player.tscn" id="1_ukmj5"]
 [ext_resource type="PackedScene" uid="uid://cpswt0ejjkk0q" path="res://scenes/enemy/enemy.tscn" id="3_81jyt"]
 
@@ -38,8 +38,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k74se"]
 _data = {
-"RESET": SubResource("Animation_447so"),
-"circling": SubResource("Animation_6mk8n")
+&"RESET": SubResource("Animation_447so"),
+&"circling": SubResource("Animation_6mk8n")
 }
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("multispawner")]
