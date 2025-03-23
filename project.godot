@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="Doombox"
-config/tags=PackedStringArray("current")
 run/main_scene="res://scenes/start/start.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://sprites/redicon.png"
